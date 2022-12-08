@@ -3,6 +3,6 @@ require("dotenv").config();
 
 app
   .get("/", (_, res) => {
-    res.send("yew api 1.0");
+    res.send("yew api 2.0");
   })
   .listen(process.env.PORT || 3000);

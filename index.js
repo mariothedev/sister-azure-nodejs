@@ -11,11 +11,11 @@ app
       .get("https://api.nationalize.io?name=mario")
       .then(function (response) {
         // handle success
-        res.send(JSON.stringify(response.data + " > ", Math.random()));
+        res.send(JSON.stringify(new Date().toUTCString()));
       })
       .catch(function (error) {
         // handle error
-        res.send("Problem");
+        res.send(JSON.stringify(error));
       });
   })
   .post("/webhook", async (_, res) => {
@@ -28,11 +28,11 @@ app
       )
       .then(function (response) {
         // handle success
-        res.send(JSON.stringify(response.data));
+        res.send(JSON.stringify(new Date().toUTCString()));
       })
       .catch(function (error) {
         // handle error
-        res.send("Problem");
+        res.send(JSON.stringify(error));
       });
   })
 

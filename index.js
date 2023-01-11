@@ -23,7 +23,7 @@ app
       .post(
         "https://hooks.slack.com/services/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",
         {
-          text: "testing: please ignore",
+          text: `testing: please ignore ${Math.random()}`,
         }
       )
       .then(function (response) {

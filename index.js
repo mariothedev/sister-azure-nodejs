@@ -20,12 +20,9 @@ app
   })
   .post("/webhook", async (_, res) => {
     axios
-      .post(
-        "https://hooks.slack.com/services/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",
-        {
-          text: `testing: please ignore ${new Date().toUTCString()}`,
-        }
-      )
+      .post(process.env.SLACK_URL, {
+        text: `testing: please ignore ${new Date().toUTCString()}`,
+      })
       .then(function (response) {
         // handle success
         res.send(JSON.stringify(new Date().toUTCString()));

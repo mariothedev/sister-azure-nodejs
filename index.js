@@ -21,7 +21,7 @@ app
   .get("/api", async (_, res) => {
     // Make a request for a user with a given ID
     axios
-      .get("https://frontdesk.azurewebsites.net")
+      .get("https://frontdesk.azurewebsites.net/api")
       .then(function (response) {
         // handle success
         res.send("response from brother: ", JSON.stringify(response.data));

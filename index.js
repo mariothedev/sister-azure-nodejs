@@ -11,7 +11,7 @@ app
       .get("https://api.nationalize.io?name=mario")
       .then(function (response) {
         // handle success
-        res.send(JSON.stringify(response.data));
+        res.send(JSON.stringify(response.data + " > ", Math.random()));
       })
       .catch(function (error) {
         // handle error

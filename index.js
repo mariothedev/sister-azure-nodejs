@@ -18,6 +18,19 @@ app
         res.send(JSON.stringify(error));
       });
   })
+  .get("/api", async (_, res) => {
+    // Make a request for a user with a given ID
+    axios
+      .get("https://frontdesk.azurewebsites.net")
+      .then(function (response) {
+        // handle success
+        res.send("response from brother: ", JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        // handle error
+        res.send(JSON.stringify(error));
+      });
+  })
   .post("/webhook", async (_, res) => {
     axios
       .post(process.env.SLACK_URL, {

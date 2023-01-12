@@ -18,9 +18,19 @@ app
         res.send(JSON.stringify(error));
       });
   })
-  .get("/api", async (_, res) => {
-    // 10.10.0.4/api - failed
-    // http://10.10.0.4/api - failed
+  .get("/api/e", async (_, res) => {
+    axios
+      .get("0.0.0.0/api")
+      .then(function (response) {
+        // handle success
+        res.send(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        // handle error
+        res.send(JSON.stringify(error));
+      });
+  })
+  .get("/api/d", async (_, res) => {
     axios
       .get("https://frontdesk.azurewebsites.net/api")
       .then(function (response) {
@@ -32,6 +42,43 @@ app
         res.send(JSON.stringify(error));
       });
   })
+  .get("/api/c", async (_, res) => {
+    axios
+      .get("http://10.10.0.4/api")
+      .then(function (response) {
+        // handle success
+        res.send(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        // handle error
+        res.send(JSON.stringify(error));
+      });
+  })
+  .get("/api/b", async (_, res) => {
+    axios
+      .get("https://10.10.0.4/api")
+      .then(function (response) {
+        // handle success
+        res.send(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        // handle error
+        res.send(JSON.stringify(error));
+      });
+  })
+  .get("/api/a", async (_, res) => {
+    axios
+      .get("10.10.0.4/api")
+      .then(function (response) {
+        // handle success
+        res.send(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        // handle error
+        res.send(JSON.stringify(error));
+      });
+  })
+
   .post("/webhook", async (_, res) => {
     axios
       .post(process.env.SLACK_URL, {

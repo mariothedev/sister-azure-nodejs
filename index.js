@@ -18,6 +18,9 @@ app
         res.send(JSON.stringify(error));
       });
   })
+  .get("/api/public", async (_, res) => {
+    res.send("public message");
+  })
   .get("/api/private", async (_, res) => {
     axios
       .get("https://frontdesk.privatelink.azurewebsites.net/api")

@@ -19,8 +19,10 @@ app
       });
   })
   .get("/api", async (_, res) => {
+    // 10.10.0.4/api - failed
+    // http://10.10.0.4/api -
     axios
-      .get("10.10.0.4/api")
+      .get("http://10.10.0.4/api")
       .then(function (response) {
         // handle success
         res.send(JSON.stringify(response.data));

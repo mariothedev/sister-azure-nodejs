@@ -18,6 +18,30 @@ app
         res.send(JSON.stringify(error));
       });
   })
+  .get("/api/g", async (_, res) => {
+    axios
+      .get("https://frontdesk.privatelink.azurewebsites.net/api")
+      .then(function (response) {
+        // handle success
+        res.send(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        // handle error
+        res.send(JSON.stringify(error));
+      });
+  })
+  .get("/api/f", async (_, res) => {
+    axios
+      .get("0.0.0.0/api")
+      .then(function (response) {
+        // handle success
+        res.send(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        // handle error
+        res.send(JSON.stringify(error));
+      });
+  })
   .get("/api/e", async (_, res) => {
     axios
       .get("0.0.0.0/api")

@@ -20,9 +20,9 @@ app
   })
   .get("/api", async (_, res) => {
     // 10.10.0.4/api - failed
-    // http://10.10.0.4/api -
+    // http://10.10.0.4/api - failed
     axios
-      .get("http://10.10.0.4/api")
+      .get("https://frontdesk.azurewebsites.net/api")
       .then(function (response) {
         // handle success
         res.send(JSON.stringify(response.data));

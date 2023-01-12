@@ -20,7 +20,7 @@ app
   })
   .get("/api", async (_, res) => {
     axios
-      .get("https://frontdesk.azurewebsites.net/api")
+      .get("10.10.0.4/api")
       .then(function (response) {
         // handle success
         res.send(JSON.stringify(response.data));
